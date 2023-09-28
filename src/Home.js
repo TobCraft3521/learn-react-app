@@ -1,19 +1,21 @@
-import { useState,useEffect } from "react"
+import { useState, useEffect } from "react"
 import BlogList from "./BlogList";
 const Home = () => {
     const [blogs, setBlogs] = useState(null)
 
     useEffect(() => {
-       fetch()
+        fetch("http://localhost:8000/blogs").then(res => {
+            return res.json()
+        }).then(data => {
+            setBlogs(data)
+        })
     })
 
-    const handleDelete = (id) => {
-        setBlogs(blogs.filter(blog => blog.id !== id))
-    }
     return (
         <div className="home">
-            <BlogList blogs={blogs} title="All blogs" handleDelete={handleDelete} />
-            <BlogList blogs={blogs.filter((blog) => blog.author === "TobCraft3521")} title="TobCraft3521s blogs" handleDelete={handleDelete} />
+            {!blogs && <div>Loading</div> }
+            {blogs && <BlogList blogs={blogs} title="All blogs"/>}
+            {/*blogs && <BlogList blogs={blogs.filter((blog) => blog.author === "TobCraft3521")} title="TobCraft3521s blogs" />*/}
         </div>
     );
 }
