@@ -15,7 +15,7 @@ const useFetch = (url) => {
             setError(error)
             console.error(error)
         })
-    })
+    },[])
     return { data , error}
 }
 
