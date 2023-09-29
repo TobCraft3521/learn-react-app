@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#Just learning some react basics
+# Just learning some react basics
 If you want to try it out yourself use...
 ```bash
 npm install
