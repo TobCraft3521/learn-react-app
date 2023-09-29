@@ -9,6 +9,10 @@ npm install
 ```bash
 npx json-server --watch data/db.json --port 8000 
 ```
-... to install the local servers
+... to install the local servers.
+Credits: TheNetNinja
+(My own) Features:
+ supports light- and darkmode (using cookies)
+
 
 
