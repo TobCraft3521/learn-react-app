@@ -11,7 +11,7 @@ const useFetch = (url) => {
             }
             return res.json()
         }).then(data => {
-            setTimeout(() => { setData(data) }, 1000)
+            setTimeout(() => { setData(data) }, 500)
 
         }).catch(error => {
             setError(error)
